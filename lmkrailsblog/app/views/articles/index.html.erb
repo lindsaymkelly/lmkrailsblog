@@ -3,4 +3,5 @@
 <% @articles.each do |article| %>
   <h3><%= article.title %></h3>
   <p><%= article.text %></p>
+  <%= link_to 'Edit', edit_article_path(article) %>
   <% end %>
