@@ -1,5 +1,12 @@
 <h1> Add New Article </h1>
 <%= form_for :article, url: articles_path do |f| %>
+<% if @article.errors.any? %>
+  <ul>
+  <% @article.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+    <% end %>
+    </ul>
+<% end %>
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
@@ -14,3 +21,4 @@
     <%= f.submit %>
   </p>
 <% end %>
+
